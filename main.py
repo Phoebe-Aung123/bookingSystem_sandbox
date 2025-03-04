@@ -52,7 +52,11 @@ def main():
 
     print("Are a new customer or existing customer?")
 
-    customer_type = input("Enter 'N' for new and 'E' for existing customer: ")
+    try:
+        customer_type = input("Enter 'N' for new and 'E' for existing customer: ")
+    except EOFError:
+        customer_type = 'N' 
+        print(f"Using default customer type: {customer_type}")
 
     if customer_type.lower() == 'n':
         #get customer details
