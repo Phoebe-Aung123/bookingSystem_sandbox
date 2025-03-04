@@ -28,5 +28,9 @@ jobs:
           python -m pip install ruff
           python -m pip install -r requirements.txt
 
+      - name: set environment variables
+        run: | 
+          echo "CUSTOMER_TYPE=N" >> $GITHUB_ENV
+
       - name: execute python script
         run: python main.py
